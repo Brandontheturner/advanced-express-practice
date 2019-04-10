@@ -1,18 +1,17 @@
 # Express Practice
 
-# Windows users - Make sure you remove single quotes from the package.json
 # Setup
-* fork, clone, npm install, node index.js
+* fork, clone, npm install, npm start
 * A web page has been created for you
 * Your job is to build the server 
 * Ignore the `client` folder
-* Look at http://localhost:3001
+* Look at http://localhost:4001
 
 # Part 1 - Server
 
 ### index.js
 * This is the starting point of the server, put all code here
-* Make your app listen to port 3001
+* Make your app listen to port 4001
 
 ### Body
 * Add body parser middleware to express
@@ -40,6 +39,7 @@ We don't need to worry about update or delete.
 * Organize the routes for /contacts, /vehicles, /comments, /products using express Router
 * Import and use the Routers in index.js
 
+
 # Part 3 - Controllers
 * Create controller files 
 * Import the arrays into the controller
@@ -47,17 +47,3 @@ We don't need to worry about update or delete.
 * create functions for list, show and create
 * Import and use the controller functions in the appropiate Router
 
-# Part 4 - Database
-* In server/index.js, import and use mongoose. Connect to a database "advanced-express-practice" 
-* Create the mongoose models for Contact, Vehicle, Comment Product
-* CommentModel - body
-* ContactModel - name, occupation, avatar
-* VehicleModel - year, make, model
-* ProductModel - name, description
-* Change the code in the controllers to use the Models instead of hard coded arrays
-
-### Points
-* Base - 10pts
-* Data shows in the page for the Lists - 5pts each (20pts)
-* Creating data works - 10pts each (40pts)
-* Can view one item at a time by id - 30pts
