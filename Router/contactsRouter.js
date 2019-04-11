@@ -5,19 +5,13 @@ router.get("/contacts", (req, res) => {
   res.json(contacts);
 });
 router.get("/contacts/:id", (req, res) => {
-  const userId = contacts.findIndex(contacts => {
-    return contacts._id == req.params.id;
-  });
-  res.json(contacts[userId]);
+  res.json(contacts);
 });
 router.post("/contacts", (req, res) => {
   res.json(contacts);
 });
 router.post("/contacts/:id", (req, res) => {
-  const userId = contacts.findIndex(contacts => {
-    return contacts._id == req.params.id;
-  });
-  res.json(contacts[userId]);
+  res.json(contacts);
 });
 
 module.exports = router;
