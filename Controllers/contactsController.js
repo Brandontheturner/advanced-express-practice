@@ -1,19 +1,20 @@
 const contacts = require("../contacts");
 
 // returning the contacts file as a list
-const list = (req, res) => res.json(contacts);
+const list = () => contacts;
 
 // function whose purpose is to show the id of an individual contact.
-const show = (req, res) => {
-  let userId = contacts.findIndex(contacts => {
-    return contacts._id == req.params.id;
+const show = userId => {
+  let userIndex = contacts.findIndex(contact => {
+    return contact._id == userId;
   });
-  res.json(contacts[userId]);
+  return contacts[userIndex];
 };
 
-const create = (req, res) => {
-  contacts.push(req.body);
-  res.json(contacts);
+const create = newContact => {
+  newContact._id = contacts[contacts.length - 1]._id + 1;
+  contacts.push(newContact);
+  return newContact;
 };
 
 module.exports = {

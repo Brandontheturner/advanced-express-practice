@@ -1,18 +1,18 @@
 const products = require("../products");
 
-const list = (req, res) => res.json(products);
+const list = () => products;
 
-const show = (req, res) => {
-  let userId = products.findIndex(products => {
-    return products._id == req.params.id;
+const show = userId => {
+  let userIndex = products.findIndex(products => {
+    return products._id == userId;
   });
-  res.json(products[userId]);
+  return products[userIndex];
 };
 
-const create = (req, res) => {
-  products.push(req.body);
-  // pushing products in the requested body of products? Am I understanding that correctly?
-  res.json(products);
+const create = newProduct => {
+  newProduct._id = products[products.length - 1]._id + 1;
+  products.push(newProduct);
+  return newProduct;
 };
 
 module.exports = {

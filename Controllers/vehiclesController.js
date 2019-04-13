@@ -1,17 +1,18 @@
 const vehicles = require("../vehicles");
 
-const list = (req, res) => res.json(vehicles);
+const list = () => vehicles;
 
-const show = (req, res) => {
-  let userId = vehicles.findIndex(vehicles => {
-    return vehicles._id == req.params.id;
+const show = userId => {
+  let userIndex = vehicles.findIndex(vehicles => {
+    return vehicles._id == userId;
   });
-  res.json(vehicles[userId]);
+  return vehicles[userIndex];
 };
 
-const create = (req, res) => {
-  vehicles.push(req.body);
-  res.json(vehicles);
+const create = newVehicle => {
+  newVehicle._id = vehicles[vehicles.length - 1]._id + 1;
+  vehicles.push(newVehicle);
+  return newVehicle;
 };
 
 module.exports = {
