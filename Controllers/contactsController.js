@@ -9,7 +9,6 @@ const show = (req, res) => {
     return contacts._id == req.params.id;
   });
   res.json(contacts[userId]);
-  // what is the c doing, does it stand for contacts? Is it a parameter, in the find function when grabbing the id using find, read find docs or explaination
 };
 
 const create = (req, res) => {

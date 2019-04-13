@@ -1,23 +1,9 @@
 const express = require("express");
 const router = express.Router();
+const controller = require('../Controllers/vehiclesController');
 
-router.get("/vehicles", (req, res) => {
-  res.json(vehicles);
-});
-router.get("/vehicles/:id", (req, res) => {
-  const userId = vehicles.findIndex(vehicles => {
-    return vehicles._id == req.params.id;
-  });
-  res.json(vehicles[userId]);
-});
-router.post("/vehicles", (req, res) => {
-  res.json(vehicles);
-});
-router.post("/vehicles/:id", (req, res) => {
-  const userId = vehicles.findIndex(vehicles => {
-    return vehicles._id == req.params.id;
-  });
-  res.json(vehicles[userId]);
-});
+router.get('/vehicles', (req, res) => res.json(controller.list()));
+
+router.get('/vehicles/:id', (req, res) => )
 
 module.exports = router;
